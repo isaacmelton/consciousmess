@@ -1,0 +1,22 @@
+// Place all the styles related to the Ripples controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.ripples {
+
+textarea {
+width: 600px;
+	height: 300px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+}
+
+.list_line_even {
+	background: #dccaa7;
+
+}
+
+.list_line_odd {
+	background: #55aa55;	
+}
+
+}

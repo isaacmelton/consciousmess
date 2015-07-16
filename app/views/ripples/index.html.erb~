@@ -1,0 +1,56 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Message</th>
+      <th>Posted</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ripples.each do |ripple| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+	<% if ripple.website.blank? %>      
+		<td><%= ripple.name %></td> 
+	<% else %>
+		<td><a href= <%= ripple.website %>><%= ripple.name %></a></td>
+	<% end %>
+
+        <td><%= truncate(strip_tags(ripple.message), length: 100) %></td>
+	<td><%= ripple.created_at %></td>
+        <td><%= link_to 'Show', ripple %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ripple', new_ripple_path %>
+
+<% if session[:page] == 0 %>
+<a>Newest</a>
+<% else %>
+<%= link_to 'Newest', newest_path %>
+<% end %>
+
+<% if (@ripples.count % 10) != 0 or session[:page] == -1%>
+<a>Next 10</a>
+<% else %>
+<%= link_to 'Next 10', next10_path %>
+<% end %>
+
+<% if session[:page] == 0 %>
+<a>Previous 10</a>
+<% else %>
+<%= link_to 'Previous 10', prev10_path %>
+<% end %>
+
+<% if session[:page] == -1 %>
+<a>Oldest</a>
+<% else %>
+<%= link_to 'Oldest', oldest_path %>
+<% end %>
+

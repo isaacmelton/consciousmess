@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p id="namedisplay">
+  <% if @ripple.website.blank? %>      
+	<td><%= @ripple.name %> SAiD</td> 
+	<% else %>
+		<td><a href= <%= @ripple.website %>><%= @ripple.name %></a></td>
+	<% end %>
+</p>
+
+<p id="showmessage">
+  <%= @ripple.message %>
+</p>
+
+<%= link_to 'Back', ripples_path %>

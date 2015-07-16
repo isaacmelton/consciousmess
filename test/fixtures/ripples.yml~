@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  website: MyString
+  message: MyText
+
+two:
+  name: MyString
+  website: MyString
+  message: MyText
+
+<% for i in 1..20 %>
+  name: guy_<%= i %>
+  website: web_<%= i %>
+  message: mes_<%= i %>
+<% end %>
